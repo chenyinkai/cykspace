@@ -55,12 +55,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@keyframes down {
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
 header {
   width: 100%;
   height: 325px;

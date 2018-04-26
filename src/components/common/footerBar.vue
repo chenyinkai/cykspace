@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.footerBar{
+  position: relative;
+}
 footer {
   position: absolute;
   left: 0;
