@@ -41,12 +41,14 @@
       </div>
     </main>
     <footer-bar></footer-bar>
+    <scroll-bar></scroll-bar>
   </div>
 </template>
 
 <script>
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
+import scrollBar from './common/scrollBar'
 export default {
   name: 'index',
   data() {
@@ -56,7 +58,8 @@ export default {
   },
   components: {
     headerBar,
-    footerBar
+    footerBar,
+    scrollBar
   }
 }
 </script>
@@ -67,7 +70,6 @@ main {
   height: auto;
   margin: 0 auto;
   min-width: 350px;
-  padding-bottom: 60px;
   .posts-expand {
     padding-top: 40px;
     animation: down 0.5s linear;
