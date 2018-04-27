@@ -29,12 +29,14 @@
       </div>
     </main>
     <footer-bar></footer-bar>
+    <scroll-bar></scroll-bar>
   </div>
 </template>
 
 <script>
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
+import scrollBar from './common/scrollBar'
 export default {
   name: 'archives',
   data() {
@@ -150,7 +152,8 @@ export default {
   },
   components: {
     headerBar,
-    footerBar
+    footerBar,
+    scrollBar
   }
 }
 </script>
@@ -164,6 +167,10 @@ export default {
   .posts-collapse {
     position: relative;
     margin-left: 55px;
+    top: -10px;
+    opacity: 0;
+    animation: down 0.5s 0.5s linear;
+    animation-fill-mode: both;
     &::after {
       content: ' ';
       position: absolute;
