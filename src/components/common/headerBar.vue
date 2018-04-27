@@ -78,14 +78,14 @@ header {
   }
   .site-title {
     position: relative;
-    top: -10px;
+    top: -50px;
     opacity: 0;
     display: inline-block;
     vertical-align: top;
     line-height: 56px;
     color: #f5f5f5;
     font-weight: normal;
-    animation: down .5s linear;
+    animation: down 0.2s linear;
     animation-fill-mode: both;
   }
   .menu {
@@ -107,13 +107,46 @@ header {
       justify-content: space-between;
       height: 100%;
       position: relative;
-      top: -10px;
+      top: -30px;
       opacity: 0;
-      animation: down .5s .5s linear;
+      animation: down 0.3s 0.2s linear;
       animation-fill-mode: both;
+      svg {
+        opacity: 0.8;
+      }
+      span {
+        position: relative;
+        opacity: 0.8;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          bottom: -5px;
+          left: 0;
+          background-color: #333;
+          visibility: hidden;
+          transform: scaleX(0);
+          transition-duration: 0.2s;
+          transition-timing-function: ease-in-out;
+          transition-delay: 0s;
+        }
+      }
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+        span {
+          opacity: 1;
+          &::before {
+            visibility: visible;
+            transform: scaleX(1);
+          }
+        }
+      }
     }
   }
-  .menu-small{
+  .menu-small {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -127,10 +160,10 @@ header {
     .header-inner {
       width: auto;
     }
-    nav{
+    nav {
       width: 80%;
       margin: 0 auto;
-      .menu{
+      .menu {
         width: 100%;
       }
     }

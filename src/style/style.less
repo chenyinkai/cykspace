@@ -3,6 +3,7 @@
 }
 body {
   font-size: 14px;
+  color: #555;
 }
 a {
   text-decoration: none;
@@ -22,6 +23,22 @@ li {
 }
 
 // 中间内容部分距离底部的距离
-main{
-    padding-bottom: 60px;
+main {
+  padding-bottom: 60px;
+}
+.main-inner {
+  width: 700px;
+  height: auto;
+  margin: 0 auto;
+  min-width: 350px;
+}
+.post-body {
+    font-family: 'Roboto Slab', 'Roboto Slab', 'PingFang SC', 'Microsoft YaHei',
+      sans-serif;
+    color: #555;
+  }
+@media screen and(max-width:768px) {
+  .main-inner {
+    width: 94%;
+  }
 }

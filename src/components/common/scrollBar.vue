@@ -55,6 +55,7 @@ export default {
 
 <style lang="less" scoped>
 .back-to-top {
+  visibility: hidden;
   box-sizing: border-box;
   position: fixed;
   bottom: -50px;
@@ -70,6 +71,7 @@ export default {
   text-align: center;
 }
 .back-to-top-on {
+  visibility: visible;
   animation: backTop 0.2s linear;
   animation-fill-mode: both;
 }

@@ -65,14 +65,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-main {
-  width: 700px;
-  height: auto;
-  margin: 0 auto;
-  min-width: 350px;
+.main-inner {
   .posts-expand {
     padding-top: 40px;
-    animation: down 0.5s linear;
+    animation: down 0.5s 0.5s linear;
     animation-fill-mode: both;
     position: relative;
     opacity: 0;
@@ -114,11 +110,6 @@ main {
       sans-serif;
     font-size: 12px;
     text-align: center;
-  }
-  .post-body {
-    font-family: 'Roboto Slab', 'Roboto Slab', 'PingFang SC', 'Microsoft YaHei',
-      sans-serif;
-    color: #555;
   }
   .post-button {
     margin-top: 40px;
@@ -194,11 +185,6 @@ main {
     color: #fff;
     background: #ccc;
     border-top-color: #ccc;
-  }
-}
-@media screen and(max-width:768px) {
-  main {
-    width: 94%;
   }
 }
 </style>
