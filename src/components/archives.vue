@@ -268,7 +268,7 @@ export default {
   }
 }
 
-@media (max-width: 767px) {
+@media screen and(max-width: 767px) {
   .content {
     .posts-collapse {
       margin: 0 20px;

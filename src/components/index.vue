@@ -16,7 +16,7 @@
                 <font-awesome-icon :icon="['fas', 'folder']" />
                 <router-link to="/tags">css</router-link>
               </div>
-              <div class="post-body">在 sf 上看到一个问题, js 是怎么实现持续的动画效果的? 第一时间想到的是定时器, 后来看到有答案提到了 requestAnimationFrame, 由于之前没有对相关方法有所了解, 于是便去查了下, 顺便也复习了下 animation 的使用.</div>
+              <div class="post-body">在 <code>sf</code> 上看到一个问题, <code>js</code>是怎么实现持续的动画效果的? 第一时间想到的是定时器, 后来看到有答案提到了 requestAnimationFrame, 由于之前没有对相关方法有所了解, 于是便去查了下, 顺便也复习了下 animation 的使用.</div>
               <div class="post-button">
                 <router-link class="btn" to="/">阅读全文 »</router-link>
               </div>
@@ -65,6 +65,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
+code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
 .main-inner {
   .posts-expand {
     padding-top: 40px;
