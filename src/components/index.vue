@@ -3,11 +3,11 @@
     <header-bar></header-bar>
     <main>
       <div class="main-inner">
-        <section class="posts-expand" v-for="(item,i) in articleList" :key="i">
+        <section class="posts-expand" v-for="(item,i) in articles.datalist" :key="i">
           <div class="article">
             <div class="article-inner">
               <div class="title">
-                <router-link to="/">{{item.title}}</router-link>
+                <router-link :to="{ name: 'article', params: { id: item.postId }}">{{item.title}}</router-link>
               </div>
               <div class="post-meta">
                 <font-awesome-icon :icon="['fas', 'calendar-times']" />
@@ -27,14 +27,11 @@
           </div>
         </section>
         <nav class="pagination">
-          <a href="" class="prev">
+          <a href="javascript:;" class="prev" v-if="pageNow > 1" @click="prev">
             <font-awesome-icon :icon="['fas', 'angle-left']" />
           </a>
-          <a href="" class="page-number">1</a>
-          <a href="" class="page-number current">2</a>
-          <span class="space">...</span>
-          <a href="" class="page-number">7</a>
-          <a href="" class="next">
+          <a href="javascript:;" @click="changePage($event)" class="page-number" :class="{current: articles.pageNum == item}" v-for="(item,i) in navArr" :key="i">{{item}}</a>
+          <a href="javascript:;" class="next" v-if="pageNow < articles.total" @click="next">
             <font-awesome-icon :icon="['fas', 'angle-right']" />
           </a>
         </nav>
@@ -53,13 +50,43 @@ export default {
   name: 'index',
   data() {
     return {
-      articleList: []
+      articles: [],
+      navArr: [],
+      pageNow: 1
     }
   },
   mounted() {
-    this.$http.get('/v1/articles').then(res => {
-      this.articleList = res.data.datalist
-    })
+    this.getArticles(this.pageNow, 2)
+  },
+  methods: {
+    getArticles(pageNum, pageSize) {
+      this.$http
+        .get('/v1/articles', {
+          params: {
+            pageNum: pageNum,
+            pageSize: pageSize
+          }
+        })
+        .then(res => {
+          this.articles = res.data
+          this.pageNow = res.data.pageNum
+          for (let i = 1; i <= res.data.total; i++) {
+            this.navArr.push(i)
+            this.navArr = [...new Set(this.navArr)]
+          }
+        })
+    },
+    changePage(e) {
+      this.getArticles(e.target.innerText, 2)
+    },
+    prev() {
+      this.pageNow--
+      this.getArticles(this.pageNow, 2)
+    },
+    next() {
+      this.pageNow++
+      this.getArticles(this.pageNow, 2)
+    }
   },
   components: {
     headerBar,
