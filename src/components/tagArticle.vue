@@ -13,7 +13,7 @@
               <div class="collection-title">
                   <h3 class="archive-year">{{articles.tagName}}</h3>
                 </div>
-              <div v-for="(item,i) in articles.articles.reverse()" :key="i">
+              <div v-for="(item,i) in articlesReverse" :key="i">
                 <article class="post">
                   <div class="post-header">
                     <div class="post-meta">{{time(item.date)}}</div>
@@ -43,12 +43,14 @@ export default {
   name: 'archives',
   data() {
     return {
-      articles: {}
+      articles: {},
+      articlesReverse: []
     }
   },
   mounted() {
     getTagArticle(this.$route.params.id).then(res => {
       this.articles = res.data
+      this.articlesReverse = res.data.articles.reverse()
       document.title = `${res.data.tagName}-博客-善良的乌贼`
     })
   },
