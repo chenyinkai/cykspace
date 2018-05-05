@@ -14,7 +14,7 @@
                 <span>发表于{{time(item.date)}}</span>
                 |
                 <font-awesome-icon :icon="['fas', 'folder']" />
-                <span>{{item.tags}}</span>
+                <span>{{item.tags.indexOf(',') ? item.tags.replace(',', ' ') : item.tags}}</span>
               </div>
               <div class="post-body" v-html="item.desc"></div>
               <div class="post-button">

@@ -9,15 +9,10 @@
               <div class="post-body">
                 <div class="tag-cloud">
                   <div class="tag-cloud-title">
-                    目前共计50个标签
+                    目前共计{{tagsList.length}}个标签
                   </div>
                   <div class="tag-cloud-tags">
-                    <router-link to="/">css</router-link>
-                    <router-link to="/">hahbkcs</router-link>
-                    <router-link to="/">css</router-link>
-                    <router-link to="/">css</router-link>
-                    <router-link to="/">web</router-link>
-                    <router-link to="/">js</router-link>
+                    <router-link  :style="{fontSize: tag.articles.length * 2 + 13 + 'px'}" :to="{name: 'tagArticle',params:{id: tag.tagId}}" v-for="(tag,i) in tagsList" :key="i">{{tag.tag}}</router-link>
                   </div>
                 </div>
               </div>
@@ -34,12 +29,18 @@
 <script>
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
+import { getTagsAll } from '../api'
 export default {
   name: 'tags',
   data() {
     return {
-      msg: 'tags'
+      tagsList: []
     }
+  },
+  mounted() {
+    getTagsAll().then(res => {
+      this.tagsList = res.data.tagsList
+    })
   },
   components: {
     headerBar,
