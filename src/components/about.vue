@@ -58,6 +58,9 @@ export default {
       msg: 'about'
     }
   },
+  mounted() {
+    document.title = '关于-博客-善良的乌贼'
+  },
   components: {
     headerBar,
     footerBar,
@@ -69,6 +72,11 @@ export default {
 <style lang="less" scoped>
 .post-body {
   padding-top: 40px;
+  position: relative;
+  top: -10px;
+  opacity: 0;
+  animation: down 0.5s 0.5s linear;
+  animation-fill-mode: both;
 }
 blockquote {
   position: relative;
@@ -126,14 +134,14 @@ hr {
   height: auto;
   border: 2px solid #eee;
 }
-.subtitle{
+.subtitle {
   margin-bottom: 10px;
 }
-.links-title{
-  font-size: 16px;margin-bottom: 10px;
-
+.links-title {
+  font-size: 16px;
+  margin-bottom: 10px;
 }
-.link a{
+.link a {
   padding: 0 20px;
   line-height: 2;
 }

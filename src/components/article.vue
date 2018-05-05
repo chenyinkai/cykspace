@@ -31,6 +31,7 @@ export default {
   mounted() {
     getDetail(this.$route.params.id).then(res => {
       this.detail = res.data
+      document.title = `${res.data.title}-博客-善良的乌贼`
     })
   },
   components: {

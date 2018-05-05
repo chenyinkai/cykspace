@@ -49,7 +49,7 @@ export default {
   mounted() {
     getTagArticle(this.$route.params.id).then(res => {
       this.articles = res.data
-      console.log(this.articles.articles)
+      document.title = `${res.data.tagName}-博客-善良的乌贼`
     })
   },
   methods: {

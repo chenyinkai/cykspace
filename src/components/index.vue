@@ -59,6 +59,7 @@ export default {
     }
   },
   mounted() {
+    document.title = '博客-善良的乌贼'
     this.getArticles(this.pageNow, this.pageSize)
   },
   methods: {

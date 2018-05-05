@@ -38,6 +38,7 @@ export default {
     }
   },
   mounted() {
+    document.title = '标签-博客-善良的乌贼'
     getTagsAll().then(res => {
       this.tagsList = res.data.tagsList
     })

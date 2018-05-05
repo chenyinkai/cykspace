@@ -48,6 +48,7 @@ export default {
     }
   },
   mounted() {
+    document.title = '归档-博客-善良的乌贼'
     getArticleAll().then(res => {
       this.articles = res.data.datalist
       this.total = res.data.total
