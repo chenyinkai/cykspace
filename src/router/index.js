@@ -10,42 +10,38 @@ import tagArticle from '@/components/tagArticle'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      redirect: '/index'
-    },
-    {
-      path: '/index',
-      name: 'index',
-      component: index
-    },
-    {
-      path: '/article/:id',
-      name: 'article',
-      component: article
-    },
-    {
-      path: '/archives',
-      name: 'archives',
-      component: archives
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: about
-    },
-    {
-      path: '/tags',
-      name: 'tags',
-      component: tags,
-      children: [
-        {
-          path: ':id',
-          name: 'tagArticle',
-          component: tagArticle
-        }
-      ]
-    }
-  ]
+  routes: [{
+    path: '/',
+    redirect: '/index'
+  },
+  {
+    path: '/index',
+    name: 'index',
+    component: index
+  },
+  {
+    path: '/article/:id',
+    name: 'article',
+    component: article
+  },
+  {
+    path: '/archives',
+    name: 'archives',
+    component: archives
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: about
+  },
+  {
+    path: '/tags',
+    name: 'tags',
+    component: tags
+  },
+  {
+    path: '/tags/:id',
+    name: 'tagArticle',
+    component: tagArticle
+  }]
 })

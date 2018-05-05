@@ -20,6 +20,7 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import {getDetail} from '../api'
 export default {
   name: 'articles',
   data() {
@@ -28,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('/v1/details?postId=' + this.$route.params.id).then(res => {
+    getDetail(this.$route.params.id).then(res => {
       this.detail = res.data
     })
   },

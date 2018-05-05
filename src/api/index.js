@@ -23,6 +23,13 @@ axios.interceptors.response.use(
   }
 )
 
+// 获取所有的文章
 export const getArticleAll = (params = {}) => axios.get(`${baseUrl}articles`, {
   params
 })
+
+// 获取文章详情
+export const getDetail = (postId) => axios.get(`${baseUrl}details?postId=${postId}`)
+
+// 获取所有的标签
+export const getTagsAll = () => axios.get(`${baseUrl}tags`)
