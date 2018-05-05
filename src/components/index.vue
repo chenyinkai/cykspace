@@ -11,7 +11,7 @@
               </div>
               <div class="post-meta">
                 <font-awesome-icon :icon="['fas', 'calendar-times']" />
-                <span>发表于{{item.date}}</span>
+                <span>发表于{{time(item.date)}}</span>
                 |
                 <font-awesome-icon :icon="['fas', 'folder']" />
                 <span>{{item.tags}}</span>
@@ -46,46 +46,48 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import { getArticleAll } from '../api'
+import { formatTime } from '../util/util'
 export default {
   name: 'index',
   data() {
     return {
       articles: [],
       navArr: [],
-      pageNow: 1
+      pageNow: 1,
+      pageSize: 8
     }
   },
   mounted() {
-    this.getArticles(this.pageNow, 2)
+    this.getArticles(this.pageNow, this.pageSize)
   },
   methods: {
     getArticles(pageNum, pageSize) {
-      this.$http
-        .get('/v1/articles', {
-          params: {
-            pageNum: pageNum,
-            pageSize: pageSize
-          }
-        })
-        .then(res => {
-          this.articles = res.data
-          this.pageNow = res.data.pageNum
-          for (let i = 1; i <= res.data.total; i++) {
-            this.navArr.push(i)
-            this.navArr = [...new Set(this.navArr)]
-          }
-        })
+      getArticleAll({
+        pageNum: pageNum,
+        pageSize: pageSize
+      }).then(res => {
+        this.articles = res.data
+        this.pageNow = res.data.pageNum
+        for (let i = 1; i <= res.data.total; i++) {
+          this.navArr.push(i)
+          this.navArr = [...new Set(this.navArr)]
+        }
+      })
     },
     changePage(e) {
-      this.getArticles(e.target.innerText, 2)
+      this.getArticles(e.target.innerText, this.pageSize)
     },
     prev() {
       this.pageNow--
-      this.getArticles(this.pageNow, 2)
+      this.getArticles(this.pageNow, this.pageSize)
     },
     next() {
       this.pageNow++
-      this.getArticles(this.pageNow, 2)
+      this.getArticles(this.pageNow, this.pageSize)
+    },
+    time(date) {
+      return formatTime(date, 'yyyy-mm-dd')
     }
   },
   components: {
