@@ -8,8 +8,10 @@ import './style/style.less'
 import fontawesome from '@fortawesome/fontawesome'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 import solid from '@fortawesome/fontawesome-free-solid'
+import brands from '@fortawesome/fontawesome-free-brands'
 
-fontawesome.library.add(solid) // Use any icon from the Solid style
+fontawesome.library.add(solid, brands) // Use any icon from the Solid style or the Brands style
+
 Vue.component('font-awesome-icon', FontAwesomeIcon) // Use the icon component anywhere in the app
 
 Vue.config.productionTip = false

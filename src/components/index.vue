@@ -208,8 +208,8 @@ export default {
     display: inline-block;
     position: relative;
     top: -1px;
-    margin: 0 10px;
-    padding: 0 11px;
+    margin: 0 8px;
+    padding: 0 10px;
   }
   .pagination .space {
     padding: 0;
