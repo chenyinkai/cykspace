@@ -8,17 +8,17 @@
             <div class="posts-collapse">
               <span class="archive-move-on"></span>
               <span class="archive-page-counter">
-                OK! 目前共计 37 篇日志。 继续努力。
+                OK! 目前共计 {{total}} 篇日志。 继续努力。
               </span>
-              <div v-for="(item,i) in msg" :key="i">
+              <div v-for="(item,i) in articles" :key="i">
                 <div class="collection-title">
                   <h3 class="archive-year">{{item.year}}</h3>
                 </div>
-                <article class="post" v-for="(article,y) in item.articles" :key="y">
+                <article class="post" v-for="(article,y) in item.list" :key="y">
                   <div class="post-header">
-                    <div class="post-meta">{{article.date}}</div>
+                    <div class="post-meta">{{time(article.date)}}</div>
                     <div class="post-title">
-                      <router-link to="/">{{article.title}}</router-link>
+                      <router-link :to="{ name: 'article', params: { id: article.postId }}">{{article.title}}</router-link>
                     </div>
                   </div>
                 </article>
@@ -37,117 +37,25 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import { getArticleAll } from '../api'
+import { formatTime } from '../util/util'
 export default {
   name: 'archives',
   data() {
     return {
-      msg: [
-        {
-          year: 2018,
-          articles: [
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            }
-          ]
-        },
-        {
-          year: 2017,
-          articles: [
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            }
-          ]
-        },
-        {
-          year: 2016,
-          articles: [
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            }
-          ]
-        },
-        {
-          year: 2015,
-          articles: [
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            }
-          ]
-        },
-        {
-          year: 2014,
-          articles: [
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            },
-            {
-              date: '03-24',
-              title: 'css和js实现持续的动画效果'
-            }
-          ]
-        }
-      ]
+      articles: [],
+      total: ''
+    }
+  },
+  mounted() {
+    getArticleAll().then(res => {
+      this.articles = res.data.datalist
+      this.total = res.data.total
+    })
+  },
+  methods: {
+    time(date) {
+      return formatTime(date, 'mm-dd')
     }
   },
   components: {
@@ -233,6 +141,7 @@ export default {
     transition-delay: 0s;
     transition-property: border;
     border-bottom: 1px dashed #ccc;
+    line-height: 2;
     &::before {
       content: ' ';
       position: absolute;
@@ -248,6 +157,12 @@ export default {
       transition-timing-function: ease-in-out;
       transition-delay: 0s;
       transition-property: background;
+    }
+    &:hover{
+      border-bottom-color: #666;
+      &::before{
+        background: #666;
+      }
     }
   }
   .post-meta {

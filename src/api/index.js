@@ -33,3 +33,6 @@ export const getDetail = (postId) => axios.get(`${baseUrl}details?postId=${postI
 
 // 获取所有的标签
 export const getTagsAll = () => axios.get(`${baseUrl}tags`)
+
+// 获取标签下所有的文章
+export const getTagArticle = (tagId) => axios.get(`${baseUrl}tags?tagId=${tagId}`)
