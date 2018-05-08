@@ -30,6 +30,7 @@
                     <a href="mailto: chenyinkai0223@foxmail.com">
                       <font-awesome-icon :icon="['fas', 'envelope']" /> 邮箱：chenyinkai0223@foxmail.com
                     </a>
+                    <br>
                     <a href="javascript:;">
                       <font-awesome-icon :icon="['fab', 'qq']" /> 287696322
                     </a>
@@ -51,6 +52,9 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+// eslint-disable-next-line
+import brands from '@fortawesome/fontawesome-free-brands'
 export default {
   name: 'about',
   data() {
@@ -64,7 +68,8 @@ export default {
   components: {
     headerBar,
     footerBar,
-    scrollBar
+    scrollBar,
+    FontAwesomeIcon
   }
 }
 </script>

@@ -10,6 +10,9 @@
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+// eslint-disable-next-line
+import solid from '@fortawesome/fontawesome-free-solid'
 export default {
   name: 'scrollBar',
   data() {
@@ -49,6 +52,9 @@ export default {
           scrollTop + ispeed
       }, 1000 / 60)
     }
+  },
+  components: {
+    FontAwesomeIcon
   }
 }
 </script>

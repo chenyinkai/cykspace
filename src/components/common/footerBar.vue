@@ -13,6 +13,9 @@
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+// eslint-disable-next-line
+import solid from '@fortawesome/fontawesome-free-solid'
 export default {
   name: 'footerBar',
   data() {
@@ -22,6 +25,9 @@ export default {
   },
   mounted() {
     this.year = new Date().getFullYear()
+  },
+  components: {
+    FontAwesomeIcon
   }
 }
 </script>

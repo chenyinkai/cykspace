@@ -48,6 +48,9 @@ import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
 import { getArticleAll } from '../api'
 import { formatTime } from '../util/util'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+// eslint-disable-next-line
+import solid from '@fortawesome/fontawesome-free-solid'
 export default {
   name: 'index',
   data() {
@@ -94,7 +97,8 @@ export default {
   components: {
     headerBar,
     footerBar,
-    scrollBar
+    scrollBar,
+    FontAwesomeIcon
   }
 }
 </script>

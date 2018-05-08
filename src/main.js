@@ -4,15 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './style/style.less'
-// 字体 font-awesome
-import fontawesome from '@fortawesome/fontawesome'
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import solid from '@fortawesome/fontawesome-free-solid'
-import brands from '@fortawesome/fontawesome-free-brands'
-
-fontawesome.library.add(solid, brands) // Use any icon from the Solid style or the Brands style
-
-Vue.component('font-awesome-icon', FontAwesomeIcon) // Use the icon component anywhere in the app
 
 Vue.config.productionTip = false
 
