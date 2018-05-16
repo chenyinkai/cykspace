@@ -19,7 +19,7 @@
 + mysql + sequelize
 + nginx + pm2
 
-## 未完成的
+## 未来可能加入
 
 + 后台管理
 + 评论
