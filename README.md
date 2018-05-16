@@ -8,7 +8,9 @@
 
 博客后台：[cykspace-node](https://github.com/chenyinkai/cykspace-node)
 
-> 由于不会设计, 博客主题是模仿 [hexo-theme-next](https://github.com/iissnan/hexo-theme-next) 的布局样式, 感谢！
+如果觉得还行的话, 欢迎给个 `star` 哈. 感谢～～
+
+> 由于不会设计, 博客主题是模仿 [hexo-theme-next](https://github.com/iissnan/hexo-theme-next) 的布局样式, 感谢作者的开源分享.
 
 ## 相关技术栈
 
@@ -52,3 +54,5 @@ npm run dev # 打开 http://localhost:8081/
 ```bash
 npm run build
 ```
+
+如果在测试期间遇到什么问题, 可留言给我, 我会及时回复, 感谢～～
