@@ -86,8 +86,6 @@ export default {
 blockquote {
   position: relative;
   margin: 40px 0;
-  padding: 0;
-  border-left: none;
   text-align: center;
   &::before {
     position: absolute;
@@ -96,11 +94,9 @@ blockquote {
     width: 100%;
     height: 24px;
     opacity: 0.2;
-    background-repeat: no-repeat;
-    background-position: 0 -2px;
+    background: url(../assets/quote-l.svg) 0 -2px no-repeat;
     background-size: 22px 22px;
     top: -20px;
-    background-image: url(../assets/quote-l.svg);
     border-top: 1px solid #ccc;
   }
   &::after {
@@ -110,12 +106,10 @@ blockquote {
     width: 100%;
     height: 24px;
     opacity: 0.2;
-    background-repeat: no-repeat;
+    background: url(../assets/quote-r.svg) 100% 4px no-repeat;
     background-size: 22px 22px;
     bottom: -20px;
-    background-image: url(../assets/quote-r.svg);
     border-bottom: 1px solid #ccc;
-    background-position: 100% 4px;
   }
 }
 hr {

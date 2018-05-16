@@ -1,0 +1,117 @@
+.content {
+  min-height: 320px;
+  .posts-expand {
+    padding-top: 40px;
+  }
+  .posts-collapse {
+    position: relative;
+    margin-left: 55px;
+    top: -10px;
+    opacity: 0;
+    animation: down 0.5s 0.5s linear;
+    animation-fill-mode: both;
+    &::after {
+      content: ' ';
+      position: absolute;
+      top: 20px;
+      left: 0;
+      margin-left: -2px;
+      width: 4px;
+      height: 100%;
+      background: #f5f5f5;
+      z-index: -1;
+    }
+  }
+  .archive-move-on {
+    position: absolute;
+    top: 11px;
+    left: 0;
+    margin-left: -6px;
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+    background: #555;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+  .archive-page-counter {
+    position: relative;
+    top: 3px;
+    left: 20px;
+    line-height: 2;
+  }
+  .collection-title {
+    position: relative;
+    margin: 60px 0;
+    line-height: 2;
+    &::before {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-left: -4px;
+      margin-top: -4px;
+      width: 8px;
+      height: 8px;
+      background: #bbb;
+      border-radius: 50%;
+    }
+  }
+  .archive-year {
+    margin-left: 20px;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  .post {
+    margin: 30px 0;
+  }
+  .post-header {
+    position: relative;
+    transition: border .2s ease-in-out;
+    border-bottom: 1px dashed #ccc;
+    line-height: 2;
+    &::before {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      margin-left: -4px;
+      background: #bbb;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: background .2s ease-in-out;
+    }
+    &:hover {
+      border-bottom-color: #666;
+      &::before {
+        background: #666;
+      }
+    }
+  }
+  .post-meta {
+    position: absolute;
+    font-size: 12px;
+    left: 20px;
+    top: 5px;
+  }
+  .post-title {
+    margin: 20px 0 15px 60px;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: inherit;
+    a {
+      color: #666;
+      border-bottom: none;
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .content {
+    .posts-collapse {
+      margin: 0 20px;
+    }
+  }
+}

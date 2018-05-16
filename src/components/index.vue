@@ -116,7 +116,6 @@ export default {
   .title {
     text-align: center;
     word-break: break-word;
-    font-weight: 400;
     margin: 20px 0 15px;
     font-size: 20px;
     line-height: 1.5;
@@ -131,10 +130,8 @@ export default {
         left: 0;
         background-color: #000;
         visibility: hidden;
+        transition: all .2s ease-in-out;
         transform: scaleX(0);
-        transition-duration: 0.2s;
-        transition-timing-function: ease-in-out;
-        transition-delay: 0s;
       }
       &:hover::before {
         visibility: visible;
@@ -156,16 +153,11 @@ export default {
     .btn {
       display: inline-block;
       padding: 0 20px;
-      font-size: 14px;
       color: #fff;
       background: #222;
       border: 2px solid #222;
       text-decoration: none;
-      border-radius: 0;
-      transition-property: background-color;
-      transition-duration: 0.2s;
-      transition-timing-function: ease-in-out;
-      transition-delay: 0s;
+      transition: background-color .2s ease-in-out;
       line-height: 2;
       &:hover {
         border-color: #222;
@@ -198,10 +190,7 @@ export default {
   .pagination .page-number {
     border-bottom: 0;
     border-top: 1px solid #eee;
-    transition-property: border-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
+    transition: border-color .2s ease-in-out;
     &:hover {
       border-top-color: #555;
     }

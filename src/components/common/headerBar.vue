@@ -133,9 +133,7 @@ header {
           background-color: #333;
           visibility: hidden;
           transform: scaleX(0);
-          transition-duration: 0.2s;
-          transition-timing-function: ease-in-out;
-          transition-delay: 0s;
+          transition: all .2s ease-in-out;
         }
       }
       &:hover {
