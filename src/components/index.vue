@@ -63,6 +63,9 @@ export default {
   },
   mounted() {
     document.title = '博客-善良的乌贼'
+    if (sessionStorage.getItem('pageNow')) {
+      this.pageNow = sessionStorage.getItem('pageNow')
+    }
     this.getArticles(this.pageNow, this.pageSize)
   },
   methods: {
@@ -80,14 +83,17 @@ export default {
       })
     },
     changePage(e) {
+      sessionStorage.setItem('pageNow', e.target.innerText)
       this.getArticles(e.target.innerText, this.pageSize)
     },
     prev() {
       this.pageNow--
+      sessionStorage.setItem('pageNow', this.pageNow)
       this.getArticles(this.pageNow, this.pageSize)
     },
     next() {
       this.pageNow++
+      sessionStorage.setItem('pageNow', this.pageNow)
       this.getArticles(this.pageNow, this.pageSize)
     },
     time(date) {
