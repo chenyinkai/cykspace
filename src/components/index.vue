@@ -37,7 +37,7 @@
         </nav>
       </div>
     </main>
-    <footer-bar></footer-bar>
+    <footer-bar v-show="isFooterBarShow"></footer-bar>
     <scroll-bar></scroll-bar>
   </div>
 </template>
@@ -58,7 +58,8 @@ export default {
       articles: [],
       navArr: [],
       pageNow: 1,
-      pageSize: 8
+      pageSize: 8,
+      isFooterBarShow: false
     }
   },
   mounted() {
@@ -74,6 +75,7 @@ export default {
         pageNum: pageNum,
         pageSize: pageSize
       }).then(res => {
+        this.isFooterBarShow = true
         this.articles = res.data
         this.pageNow = res.data.pageNum
         for (let i = 1; i <= res.data.total; i++) {
