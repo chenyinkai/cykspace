@@ -93,6 +93,10 @@ header {
     font-weight: normal;
     animation: down 0.2s linear;
     animation-fill-mode: both;
+    &:hover{
+      transform: scale(1.2);
+      transition: all 1s;
+    }
   }
   .menu {
     margin: 20px auto 0;
