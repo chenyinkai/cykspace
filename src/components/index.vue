@@ -10,11 +10,14 @@
                 <router-link :to="{ name: 'article', params: { id: item.postId }}">{{item.title}}</router-link>
               </div>
               <div class="post-meta">
-                <font-awesome-icon :icon="['fas', 'calendar-times']" />
-                <span>发表于{{time(item.date)}}</span>
+                <font-awesome-icon :icon="['fas', 'calendar-times']" class="time" />
+                <span class="time">发表于{{time(item.date)}}</span>
                 |
-                <font-awesome-icon :icon="['fas', 'folder']" />
-                <span>{{item.tags.indexOf(',') ? item.tags.replace(',', ' ') : item.tags}}</span>
+                <font-awesome-icon :icon="['fas', 'folder']" class="tags" />
+                <span class="tags">{{item.tags.indexOf(',') ? item.tags.replace(',', ' ') : item.tags}}</span>
+                |
+                <font-awesome-icon :icon="['fas', 'eye']" class="count" />
+                <span class="count">阅读人数 {{item.readNum}}</span>
               </div>
               <div class="post-body" v-html="item.desc"></div>
               <div class="post-button">
@@ -146,6 +149,15 @@ export default {
         transform: scaleX(1);
       }
     }
+  }
+  .time{
+    color: #00a7e0;
+  }
+  .tags{
+    color: #333;
+  }
+  .count{
+    color: #ff3f1a;
   }
   .post-meta {
     margin: 3px 0 60px 0;

@@ -36,3 +36,8 @@ export const getTagsAll = () => axios.get(`${baseUrl}tags`)
 
 // 获取标签下所有的文章
 export const getTagArticle = (tagId) => axios.get(`${baseUrl}tags?tagId=${tagId}`)
+
+// 文章阅读次数
+export const readCountIncrease = (postId) => axios.post(`${baseUrl}readNum`, {
+  postId: postId
+})
