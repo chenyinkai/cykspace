@@ -1,5 +1,6 @@
 <template>
   <div class="archives">
+    <nav-bar></nav-bar>
     <header-bar></header-bar>
     <main>
       <div class="main-inner">
@@ -38,6 +39,7 @@ import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
 import { getArticleAll } from '../api'
+import navBar from './common/navBar'
 import { formatTime } from '../util/util'
 export default {
   name: 'archives',
@@ -62,7 +64,8 @@ export default {
   components: {
     headerBar,
     footerBar,
-    scrollBar
+    scrollBar,
+    navBar
   }
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="articles">
+    <nav-bar></nav-bar>
     <header-bar></header-bar>
     <main>
       <div class="main-inner">
@@ -20,6 +21,7 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import navBar from './common/navBar'
 import { getDetail, readCountIncrease } from '../api'
 export default {
   name: 'articles',
@@ -38,7 +40,8 @@ export default {
   components: {
     headerBar,
     footerBar,
-    scrollBar
+    scrollBar,
+    navBar
   }
 }
 </script>

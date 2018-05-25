@@ -13,6 +13,7 @@
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 // eslint-disable-next-line
 import solid from '@fortawesome/fontawesome-free-solid'
+import eventBus from '../../util/eventBus'
 export default {
   name: 'scrollBar',
   data() {
@@ -36,8 +37,10 @@ export default {
       this.scrollPercent = parseInt(Math.ceil(scrollTop / scrollDistance * 100))
       if (scrollTop > 100) {
         this.isBackTopOn = true
+        this.showNavBar(true)
       } else {
         this.isBackTopOn = false
+        this.showNavBar(false)
       }
     },
     goTop() {
@@ -51,6 +54,9 @@ export default {
         document.documentElement.scrollTop = document.body.scrollTop =
           scrollTop + ispeed
       }, 1000 / 60)
+    },
+    showNavBar(state) {
+      eventBus.$emit('isNavBarShow', state)
     }
   },
   components: {

@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <nav-bar></nav-bar>
     <header-bar></header-bar>
     <main>
       <div class="main-inner">
@@ -52,6 +53,7 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import navBar from './common/navBar'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 // eslint-disable-next-line
 import brands from '@fortawesome/fontawesome-free-brands'
@@ -69,7 +71,8 @@ export default {
     headerBar,
     footerBar,
     scrollBar,
-    FontAwesomeIcon
+    FontAwesomeIcon,
+    navBar
   }
 }
 </script>

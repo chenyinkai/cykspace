@@ -1,5 +1,6 @@
 <template>
   <div class="index">
+    <nav-bar></nav-bar>
     <header-bar></header-bar>
     <main>
       <div class="main-inner">
@@ -49,6 +50,7 @@
 import headerBar from './common/headerBar'
 import footerBar from './common/footerBar'
 import scrollBar from './common/scrollBar'
+import navBar from './common/navBar'
 import { getArticleAll } from '../api'
 import { formatTime } from '../util/util'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
@@ -109,7 +111,8 @@ export default {
     headerBar,
     footerBar,
     scrollBar,
-    FontAwesomeIcon
+    FontAwesomeIcon,
+    navBar
   }
 }
 </script>
