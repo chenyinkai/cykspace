@@ -17,9 +17,9 @@
               <div v-for="(item,i) in articlesReverse" :key="i">
                 <article class="post">
                   <div class="post-header">
-                    <div class="post-meta">{{time(item.date)}}</div>
+                    <div class="post-meta">{{time(item[0].date)}}</div>
                     <div class="post-title">
-                      <router-link :to="{ name: 'article', params: { id: item.postId }}">{{item.title}}</router-link>
+                      <router-link :to="{ name: 'article', params: { id: item[0].postId }}">{{item[0].title}}</router-link>
                     </div>
                   </div>
                 </article>
@@ -54,6 +54,7 @@ export default {
       this.articles = res.data
       this.articlesReverse = res.data.articles.reverse()
       document.title = `${res.data.tagName}-博客-善良的乌贼`
+      console.log(this.articlesReverse[0][0].date)
     })
   },
   methods: {
