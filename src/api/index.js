@@ -1,7 +1,7 @@
 import axios from 'axios'
 import NProgress from 'nprogress'
 
-const baseUrl = process.env.NODE_ENV === 'production' ? 'https://www..cykspace.com/v1/' : 'https://www.cykspace.com/v1/'
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://www.cykspace.com/v1/' : 'https://www.cykspace.com/v1/'
 
 axios.interceptors.request.use(
   function (config) {
