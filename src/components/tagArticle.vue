@@ -54,7 +54,6 @@ export default {
       this.articles = res.data
       this.articlesReverse = res.data.articles.reverse()
       document.title = `${res.data.tagName}-博客-善良的乌贼`
-      console.log(this.articlesReverse[0][0].date)
     })
   },
   methods: {

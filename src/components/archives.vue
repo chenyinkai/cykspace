@@ -6,7 +6,7 @@
       <div class="main-inner">
         <div class="content">
           <div class="post-expand">
-            <div class="posts-collapse">
+            <div class="posts-collapse" v-if="articles.length>0">
               <span class="archive-move-on"></span>
               <span class="archive-page-counter">
                 OK! 目前共计 {{total}} 篇日志。 继续努力。
