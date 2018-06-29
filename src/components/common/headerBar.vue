@@ -12,7 +12,7 @@
         <nav>
           <ul class="menu">
             <li class="menu-item">
-              <router-link to="/index">
+              <router-link to="/">
                 <font-awesome-icon :icon="['fas', 'home']" />
                 <span>首页</span>
               </router-link>
