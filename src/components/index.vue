@@ -4,6 +4,9 @@
     <header-bar></header-bar>
     <main>
       <div class="main-inner">
+        <div class="tips">
+          PS: 由于目前暂时没有评论功能，任何有疑问的地方或者有什么建议的话，都可以通过<a href="https://github.com/chenyinkai/cykspace">这里的Issue</a>进行沟通。
+        </div>
         <section class="posts-expand" v-for="(item,i) in articles.datalist" :key="i">
           <div class="article">
             <div class="article-inner">
@@ -119,6 +122,14 @@ export default {
 
 <style lang="less" scoped>
 .main-inner {
+  .tips{
+    color: #ff3f1a;
+    margin-top: 20px;
+    font-size: 16px;
+    a{
+      color: #00a7e0;
+    }
+  }
   .posts-expand {
     padding-top: 40px;
     animation: down 0.5s 0.5s linear;
