@@ -1,6 +1,10 @@
 <template>
   <div id="app">
+    <nav-bar></nav-bar>
+    <header-bar></header-bar>
     <router-view/>
+    <footer-bar></footer-bar>
+    <scroll-bar></scroll-bar>
     <div class="footer-inner">
       <span id="busuanzi_container_site_pv">本站总访问量
         <span id="busuanzi_value_site_pv"></span>次</span>
@@ -16,8 +20,18 @@
 </template>
 
 <script>
+import headerBar from './components/common/headerBar'
+import footerBar from './components/common/footerBar'
+import scrollBar from './components/common/scrollBar'
+import navBar from './components/common/navBar'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    headerBar,
+    footerBar,
+    scrollBar,
+    navBar
+  }
 }
 </script>
 

@@ -1,7 +1,5 @@
 <template>
   <div class="index">
-    <nav-bar></nav-bar>
-    <header-bar></header-bar>
     <main>
       <div class="main-inner">
         <div class="tips">
@@ -44,16 +42,10 @@
         </nav>
       </div>
     </main>
-    <footer-bar v-show="isFooterBarShow"></footer-bar>
-    <scroll-bar></scroll-bar>
   </div>
 </template>
 
 <script>
-import headerBar from './common/headerBar'
-import footerBar from './common/footerBar'
-import scrollBar from './common/scrollBar'
-import navBar from './common/navBar'
 import { getArticleAll } from '../api'
 import { formatTime } from '../util/util'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
@@ -66,8 +58,7 @@ export default {
       articles: [],
       navArr: [],
       pageNow: 1,
-      pageSize: 8,
-      isFooterBarShow: false
+      pageSize: 8
     }
   },
   mounted() {
@@ -83,7 +74,6 @@ export default {
         pageNum: pageNum,
         pageSize: pageSize
       }).then(res => {
-        this.isFooterBarShow = true
         this.articles = res.data
         this.pageNow = res.data.pageNum
         for (let i = 1; i <= res.data.total; i++) {
@@ -111,11 +101,7 @@ export default {
     }
   },
   components: {
-    headerBar,
-    footerBar,
-    scrollBar,
-    FontAwesomeIcon,
-    navBar
+    FontAwesomeIcon
   }
 }
 </script>

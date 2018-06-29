@@ -1,7 +1,5 @@
 <template>
   <div class="about">
-    <nav-bar></nav-bar>
-    <header-bar></header-bar>
     <main>
       <div class="main-inner">
         <div class="content">
@@ -44,16 +42,10 @@
         </div>
       </div>
     </main>
-    <footer-bar></footer-bar>
-    <scroll-bar></scroll-bar>
   </div>
 </template>
 
 <script>
-import headerBar from './common/headerBar'
-import footerBar from './common/footerBar'
-import scrollBar from './common/scrollBar'
-import navBar from './common/navBar'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 // eslint-disable-next-line
 import brands from '@fortawesome/fontawesome-free-brands'
@@ -68,11 +60,7 @@ export default {
     document.title = '关于-博客-善良的乌贼'
   },
   components: {
-    headerBar,
-    footerBar,
-    scrollBar,
-    FontAwesomeIcon,
-    navBar
+    FontAwesomeIcon
   }
 }
 </script>

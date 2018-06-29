@@ -1,7 +1,5 @@
 <template>
   <div class="articles">
-    <nav-bar></nav-bar>
-    <header-bar></header-bar>
     <main>
       <div class="main-inner">
         <div class="content">
@@ -12,16 +10,10 @@
         </div>
       </div>
     </main>
-    <footer-bar></footer-bar>
-    <scroll-bar></scroll-bar>
   </div>
 </template>
 
 <script>
-import headerBar from './common/headerBar'
-import footerBar from './common/footerBar'
-import scrollBar from './common/scrollBar'
-import navBar from './common/navBar'
 import { getDetail, readCountIncrease } from '../api'
 export default {
   name: 'articles',
@@ -36,12 +28,6 @@ export default {
       this.detail = res.data
       document.title = `${res.data.title}-博客-善良的乌贼`
     })
-  },
-  components: {
-    headerBar,
-    footerBar,
-    scrollBar,
-    navBar
   }
 }
 </script>

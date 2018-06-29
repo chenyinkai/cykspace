@@ -1,6 +1,5 @@
 <template>
   <div class="tags">
-    <header-bar></header-bar>
     <main>
       <div class="main-inner">
         <div class="content">
@@ -22,13 +21,10 @@
       </div>
     </main>
     <router-view></router-view>
-    <footer-bar></footer-bar>
   </div>
 </template>
 
 <script>
-import headerBar from './common/headerBar'
-import footerBar from './common/footerBar'
 import { getTagsAll } from '../api'
 export default {
   name: 'tags',
@@ -42,10 +38,6 @@ export default {
     getTagsAll().then(res => {
       this.tagsList = res.data.tagsList
     })
-  },
-  components: {
-    headerBar,
-    footerBar
   }
 }
 </script>
