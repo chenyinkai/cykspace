@@ -16,6 +16,7 @@
       |
       <a href="http://www.miitbeian.gov.cn/">浙ICP备18020724号-1</a>
     </div>
+    <qrcode></qrcode>
   </div>
 </template>
 
@@ -24,13 +25,15 @@ import headerBar from './components/common/headerBar'
 import footerBar from './components/common/footerBar'
 import scrollBar from './components/common/scrollBar'
 import navBar from './components/common/navBar'
+import qrcode from './components/common/qrcode'
 export default {
   name: 'App',
   components: {
     headerBar,
     footerBar,
     scrollBar,
-    navBar
+    navBar,
+    qrcode
   }
 }
 </script>
