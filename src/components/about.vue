@@ -26,6 +26,10 @@
                       <font-awesome-icon :icon="['fas', 'comment']" /> segmentfault
                     </a>
                     <br>
+                    <a href="https://weibo.com/5557385372/profile?rightmod=1&wvr=6&mod=personinfo">
+                      <font-awesome-icon :icon="['fab', 'weibo']" /> 微博
+                    </a>
+                    <br>
                     <a href="mailto: chenyinkai0223@foxmail.com">
                       <font-awesome-icon :icon="['fas', 'envelope']" /> 邮箱：chenyinkai0223@foxmail.com
                     </a>
